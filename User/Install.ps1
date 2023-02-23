@@ -9,6 +9,8 @@ while(!(Test-NetConnection Google.com).PingSucceeded){
 
 Get-ChildItem -Path C:\ProgramData\Easy-GPU-P -Recurse | Unblock-File
 
+
+return   # skip-parsec
 if (Test-Path HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Parsec) 
     {}
     else {
@@ -24,6 +26,7 @@ if (Test-Path HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninst
     Copy-Item -Path "C:\ProgramData\Easy-GPU-P\Parsec.lnk" -Destination "C:\Users\Public\Desktop"
     Stop-Process parsecd -Force
     }
+
 
 Function ParsecVDDMonitorSetupScheduledTask {
 $XML = @"
