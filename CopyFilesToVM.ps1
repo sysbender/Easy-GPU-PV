@@ -2493,8 +2493,9 @@ You can use the fields below to configure the VHD or VHDX that you want to creat
             Add-VMGpuPartitionAdapterFiles -GPUName $GPUName -DriveLetter $windowsDrive
             }
 
-            Write-W2VInfo "Setting up Parsec to install at boot"
-            Setup-ParsecInstall -DriveLetter $WindowsDrive -Team_ID $team_id -Key $key
+            #skip-parsec
+            #Write-W2VInfo "Setting up Parsec to install at boot"
+            #Setup-ParsecInstall -DriveLetter $WindowsDrive -Team_ID $team_id -Key $key
 
             if ($DiskLayout -eq "UEFI")
             {
